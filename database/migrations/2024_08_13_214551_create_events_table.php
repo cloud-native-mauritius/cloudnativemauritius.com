@@ -11,13 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('authors', function (Blueprint $table) {
+        Schema::create('events', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->nullable();
-            $table->text('bio')->nullable();
-            $table->string('photo')->nullable();
-            $table->string('slug');
+            $table->string('type');
+            $table->string('title');
+            $table->string('location');
+            $table->string('google_map')->nullable();
+            $table->text('note')->nullable();
+            $table->string('cncf_url')->nullable();
+            $table->dateTime('start_date');
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('authors');
+        Schema::dropIfExists('events');
     }
 };

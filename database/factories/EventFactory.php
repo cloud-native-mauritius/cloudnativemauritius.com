@@ -27,6 +27,7 @@ class EventFactory extends Factory
             'google_map' => $this->faker->word(),
             'note' => $this->faker->text(),
             'cncf_url' => $this->faker->word(),
+            'start_date' => $this->faker->dateTime(),
         ];
     }
 }

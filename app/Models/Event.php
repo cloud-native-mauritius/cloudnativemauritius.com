@@ -21,6 +21,7 @@ class Event extends Model
         'google_map',
         'note',
         'cncf_url',
+        'start_date',
     ];
 
     /**
@@ -30,5 +31,6 @@ class Event extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'start_date' => 'datetime',
     ];
 }
