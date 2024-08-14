@@ -38,6 +38,8 @@ class PageResource extends Resource
                 TextInput::make('cover_image_caption')
                     ->label('Cover Image Caption'),
                 TextInput::make('meta_title')
+                    ->label('Meta Title'),
+                TextInput::make('meta_description')
                     ->label('Meta Description'),
                 FileUpload::make('meta_image')
                     ->label('Meta Image'),
