@@ -11,6 +11,7 @@ use Filament\Support\Markdown;
 use Filament\Resources\Resource;
 use Illuminate\Support\Facades\Date;
 use Filament\Forms\Components\Select;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\DatePicker;
 use Illuminate\Database\Eloquent\Builder;
@@ -65,7 +66,10 @@ class EventResource extends Resource
     {
         return $table
             ->columns([
-
+                TextColumn::make('title')
+                    ->label('Title'),
+                TextColumn::make('Type')
+                    ->label('Event Type'),
             ])
             ->filters([
                 //
