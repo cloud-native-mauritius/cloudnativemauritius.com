@@ -2,16 +2,20 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\PageResource\Pages;
-use App\Filament\Resources\PageResource\RelationManagers;
-use App\Models\Page;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
+use App\Models\Page;
 use Filament\Tables;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
+use Filament\Resources\Resource;
+use Filament\Forms\Components\TextInput;
 use Illuminate\Database\Eloquent\Builder;
+use Filament\Forms\Components\MarkdownEditor;
+use App\Filament\Resources\PageResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\PageResource\RelationManagers;
+use Filament\Forms\Components\FileUpload;
+use Filament\Tables\Columns\TextColumn;
 
 class PageResource extends Resource
 {
@@ -23,7 +27,23 @@ class PageResource extends Resource
     {
         return $form
             ->schema([
-                //
+                TextInput::make('title')
+                    ->label('Title')
+                    ->required(),
+                FileUpload::make('cover_image')
+                    ->label('Cover Image'),
+                MarkdownEditor::make('content')
+                    ->label('Content')
+                    ->required(),
+                TextInput::make('cover_image_caption')
+                    ->label('Cover Image Caption'),
+                TextInput::make('meta_title')
+                    ->label('Meta Description'),
+                FileUpload::make('meta_image')
+                    ->label('Meta Image'),
+                TextInput::make('slug')
+                    ->label('Slug')
+                    ->required(),
             ]);
     }
 
@@ -31,7 +51,8 @@ class PageResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('title')
+                    ->label('Title'),
             ])
             ->filters([
                 //
