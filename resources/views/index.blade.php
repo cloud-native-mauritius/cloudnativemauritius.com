@@ -12,7 +12,7 @@
         @endphp
 
         @if ($eventDate->isFuture())
-        <div class="mt-4 p-6 bg-[#0086FF] flex justify-between rounded-md shadow-md outline hover:scale-105 transition ease-in-out duration-300 relative">
+        <div class="mt-4 p-6 bg-[#0086FF] flex justify-between md:rounded-md md:shadow-md md:outline md:hover:scale-105 transition ease-in-out duration-300 relative">
             <a href="{{ $event->cncf_url }}" target="_blank" class="absolute inset-0"></a>
             <div>
                 <span class="px-3 py-1 rounded-full bg-gray-100 text-[11px] font-bold uppercase">{{ $event->type }}</span>
@@ -54,7 +54,7 @@
         @endphp
 
         @if ($eventDate->isPast())
-        <div class="mt-4 p-6 bg-gray-200 flex justify-between rounded-md shadow-md outline hover:scale-105 transition ease-in-out duration-300 relative">
+        <div class="mt-4 p-6 bg-white flex justify-between md:rounded-md md:shadow-md md:outline md:hover:scale-105 transition ease-in-out duration-300 relative">
             <a href="{{ $event->cncf_url }}" target="_blank" class="absolute inset-0"></a>
             <div>
                 <span class="px-3 py-1 rounded-full bg-gray-800 text-white text-[11px] font-bold uppercase">{{ $event->type }}</span>
