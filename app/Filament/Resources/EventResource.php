@@ -34,8 +34,11 @@ class EventResource extends Resource
                     ->options([
                         'meetup' => 'Meetup',
                         'workshop' => 'Workshop',
+                        'presentation' => 'Presentation',
+                        'panel discussion' => 'Panel Discussion',
+                        'talk' => 'Talk',
                         'conference' => 'Conference',
-                        'Webinar' => 'Webinar',
+                        'webinar' => 'Webinar',
                     ])
                     ->required(),
                 TextInput::make('title')
