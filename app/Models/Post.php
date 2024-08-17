@@ -37,9 +37,9 @@ class Post extends Model
         'id' => 'integer',
     ];
 
-    public function categories(): HasMany
+    public function categories(): BelongsToMany
     {
-        return $this->hasMany(Category::class);
+        return $this->belongsToMany(Category::class);
     }
 
     public function authors(): BelongsToMany

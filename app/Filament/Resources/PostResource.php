@@ -58,6 +58,9 @@ class PostResource extends Resource
                 Select::make('Authors')
                     ->multiple()
                     ->relationship('authors', 'name'),
+                Select::make('Categories')
+                    ->multiple()
+                    ->relationship('categories', 'name'),
                 TextInput::make('slug'),
                 Toggle::make('is_published')
                     ->label('Publish')
