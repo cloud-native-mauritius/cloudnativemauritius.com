@@ -45,5 +45,5 @@
 @endsection
 
 @section('head')
-    <title>{{ $post->meta_title }}</title>
+    <title>Blog | Cloud Native Chapter of Mauritius</title>
 @endsection
