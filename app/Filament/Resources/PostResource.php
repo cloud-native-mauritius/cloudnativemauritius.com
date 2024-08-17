@@ -19,6 +19,9 @@ use App\Filament\Resources\PostResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\PostResource\RelationManagers;
 use App\Filament\Resources\PostResource\RelationManagers\AuthorsRelationManager;
+use DateTime;
+use Filament\Forms\Components\DateTimePicker;
+use Filament\Forms\Components\Toggle;
 
 class PostResource extends Resource
 {
@@ -47,15 +50,21 @@ class PostResource extends Resource
                     ->label('Meta Title')
                     ->nullable(),
                 TextInput::make('meta_description')
-                    ->label('Meta Title')
+                    ->label('Meta Description')
                     ->nullable(),
                 FileUpload::make('meta_image')
                     ->label('Meta Image')
                     ->nullable(),
-                TextInput::make('slug'),
                 Select::make('Authors')
                     ->multiple()
-                    ->relationship('authors', 'name')
+                    ->relationship('authors', 'name'),
+                TextInput::make('slug'),
+                Toggle::make('is_published')
+                    ->label('Publish')
+                    ->default(false),
+                DateTimePicker::make('published_at')
+                    ->label('Published At')
+                    ->nullable()
             ]);
     }
 
