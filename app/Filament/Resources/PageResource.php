@@ -8,14 +8,15 @@ use Filament\Tables;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
+use Illuminate\Support\Facades\Auth;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\FileUpload;
 use Illuminate\Database\Eloquent\Builder;
 use Filament\Forms\Components\MarkdownEditor;
 use App\Filament\Resources\PageResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\PageResource\RelationManagers;
-use Filament\Forms\Components\FileUpload;
-use Filament\Tables\Columns\TextColumn;
 
 class PageResource extends Resource
 {
@@ -85,5 +86,10 @@ class PageResource extends Resource
             'view' => Pages\ViewPage::route('/{record}'),
             'edit' => Pages\EditPage::route('/{record}/edit'),
         ];
+    }
+
+    public static function canViewAny(): bool
+    {
+        return Auth::user() && Auth::user()->is_admin;
     }
 }

@@ -2,22 +2,23 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\AuthorResource\Pages;
-use App\Filament\Resources\AuthorResource\RelationManagers;
-use App\Models\Author;
-use Faker\Provider\ar_EG\Text;
 use Filament\Forms;
-use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\MarkdownEditor;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
-use Filament\Tables\Columns\ImageColumn;
-use Filament\Tables\Columns\TextColumn;
+use App\Models\Author;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
+use Faker\Provider\ar_EG\Text;
+use Filament\Resources\Resource;
+use Illuminate\Support\Facades\Auth;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Forms\Components\TextInput;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Forms\Components\FileUpload;
 use Illuminate\Database\Eloquent\Builder;
+use Filament\Forms\Components\MarkdownEditor;
+use App\Filament\Resources\AuthorResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\AuthorResource\RelationManagers;
 
 class AuthorResource extends Resource
 {
@@ -87,5 +88,10 @@ class AuthorResource extends Resource
             'create' => Pages\CreateAuthor::route('/create'),
             'edit' => Pages\EditAuthor::route('/{record}/edit'),
         ];
+    }
+
+    public static function canViewAny(): bool
+    {
+        return Auth::user() && Auth::user()->is_admin;
     }
 }

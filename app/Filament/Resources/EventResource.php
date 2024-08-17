@@ -9,6 +9,7 @@ use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Filament\Support\Markdown;
 use Filament\Resources\Resource;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Date;
 use Filament\Forms\Components\Select;
 use Filament\Tables\Columns\TextColumn;
@@ -100,5 +101,10 @@ class EventResource extends Resource
             'view' => Pages\ViewEvent::route('/{record}'),
             'edit' => Pages\EditEvent::route('/{record}/edit'),
         ];
+    }
+
+    public static function canViewAny(): bool
+    {
+        return Auth::user() && Auth::user()->is_admin;
     }
 }
