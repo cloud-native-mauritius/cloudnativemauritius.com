@@ -90,8 +90,8 @@ class AuthorResource extends Resource
         ];
     }
 
-    public static function canViewAny(): bool
-    {
-        return Auth::user() && Auth::user()->is_admin;
-    }
+    // public static function canViewAny(): bool
+    // {
+    //     return Auth::user() && Auth::user()->is_admin;
+    // }
 }
