@@ -63,10 +63,9 @@ class PostResource extends Resource
                     ->relationship('categories', 'name'),
                 TextInput::make('slug'),
                 Toggle::make('is_published')
-                    ->label('Publish')
-                    ->default(false),
-                DateTimePicker::make('published_at')
-                    ->label('Published At')
+                    ->label('Publish'),
+                DateTimePicker::make('created_at')
+                    ->label('Created At')
                     ->nullable()
             ]);
     }

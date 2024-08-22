@@ -25,7 +25,7 @@
                         </div>
                         <div>
                             <p class="text-xs uppercase font-semibold">By {{ $author->name }}</p>
-                            <p class="mt-0.5 text-xs font-light">{{ \Carbon\Carbon::parse($post->published_at)->format('d M Y') }}</p>
+                            <p class="mt-0.5 text-xs font-light">{{ \Carbon\Carbon::parse($post->created_at)->format('d M Y') }}</p>
                         </div>
                     </div>
                     @endforeach

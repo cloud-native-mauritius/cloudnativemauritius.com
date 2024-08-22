@@ -24,6 +24,7 @@ class Post extends Model
         'meta_title',
         'meta_description',
         'meta_image',
+        'is_published',
         'slug',
         'category_id',
     ];

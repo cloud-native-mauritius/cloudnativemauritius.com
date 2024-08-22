@@ -10,7 +10,7 @@ Route::get('/', function () {
 });
 
 Route::get('/blog', function () {
-    $posts = App\Models\Post::orderBy('published_at', 'desc')->get();
+    $posts = App\Models\Post::where('is_published', true)->orderBy('published_at', 'desc')->get();
     return view('posts', compact('posts'));
 });
 
