@@ -21,3 +21,5 @@ yarn-error.log
 **/.DS_Store
 /draft.yaml
 /.blueprint
+_ide_helper*
+.phpstorm.meta.php
