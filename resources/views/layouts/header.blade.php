@@ -1,3 +1,4 @@
+{{-- TODO: use named routes --}}
 <div class="lg:mt-16">
     <nav class="max-w-4xl mx-auto flex space-x-4 justify-end items-center">
         <a href="/our-chapter" class="px-3 py-1.5 bg-gray-800 text-slate-100 rounded-md shadow-md text-xs font-semibold uppercase hover:opacity-80 transition ease-in-out duration-300">
@@ -9,7 +10,7 @@
         <a href="/cncf" class="px-3 py-1.5 bg-gray-800 text-slate-100 rounded-md shadow-md text-xs font-semibold uppercase hover:opacity-80 transition ease-in-out duration-300">
             CNCF
         </a>
-        <a href="/blog" class="px-3 py-1.5 bg-gray-800 text-slate-100 rounded-md shadow-md text-xs font-semibold uppercase hover:opacity-80 transition ease-in-out duration-300">
+        <a href="{{ route('blog') }}" class="px-3 py-1.5 bg-gray-800 text-slate-100 rounded-md shadow-md text-xs font-semibold uppercase hover:opacity-80 transition ease-in-out duration-300">
             Blog
         </a>
         <a href="https://t.me/+E_G1XIVXTWMzYjU0" target="_blank">
@@ -19,7 +20,7 @@
 
     <div class="mt-2 max-w-4xl mx-auto bg-[#0086FF] lg:rounded-md lg:shadow-lg lg:outline">
         <div class="py-6 px-6">
-            <a href="/" class="flex flex-row items-center gap-4 block">
+            <a href="{{ route('home') }}" class="flex flex-row items-center gap-4">
                 <div>
                     <img src="/images/kubernetes-color.svg" alt="Cloud Native Mauritius" class="h-16 w-16" />
                 </div>

@@ -8,7 +8,7 @@
         <div class="grid grid-cols-2 gap-6">
             @foreach ($posts as $post)
             <div class="mt-4 p-6 bg-white flex justify-between md:rounded-md md:shadow-md md:outline md:hover:scale-105 transition ease-in-out duration-300 relative">
-                <a href="/p/{{ $post->slug }}" class="absolute inset-0"></a>
+                <a href="{{ route('post.show', $post) }}" class="absolute inset-0"></a>
                 <div>
                     @foreach ($post->categories as $category)
                         <span class="px-3 py-1 rounded-full bg-gray-800 text-white text-[11px] font-bold uppercase">{{ $category->name }}</span>
