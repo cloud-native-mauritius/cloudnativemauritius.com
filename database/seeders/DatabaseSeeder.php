@@ -2,6 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\Author;
+use App\Models\Category;
+use App\Models\Event;
+use App\Models\Page;
+use App\Models\Post;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -19,5 +24,17 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
+
+        Post::factory(50)
+            ->has(Author::factory())
+            ->has(Category::factory())
+            ->create();
+
+        Event::factory(50)
+            ->create();
+
+        Page::factory(50)
+            ->create();
+
     }
 }
