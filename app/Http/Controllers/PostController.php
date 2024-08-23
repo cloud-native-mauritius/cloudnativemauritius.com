@@ -8,6 +8,8 @@ class PostController extends Controller
 {
     public function show(Post $post)
     {
+        $post->load(['authors', 'categories']);
+
         return view('post', compact('post'));
     }
 }
