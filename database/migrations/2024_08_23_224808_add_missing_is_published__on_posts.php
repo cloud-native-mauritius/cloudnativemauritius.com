@@ -12,7 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->boolean('is_published')->default(false);
+            $table->after('slug', function (Blueprint $table) {
+                $table->boolean('is_published')->default(false);
+                $table->dateTime('published_at')
+                    ->nullable();
+            });
         });
     }
 
@@ -23,6 +27,7 @@ return new class extends Migration
     {
         Schema::table('posts', function (Blueprint $table) {
             $table->dropColumn('is_published');
+            $table->dropColumn('published_at');
         });
     }
 };
