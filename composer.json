@@ -63,6 +63,9 @@
             "@php artisan ide-helper:meta",
             "@php artisan ide-helper:models -N",
             "@php artisan ide-helper:eloquent"
+        ],
+        "test:lint": [
+            "./vendor/bin/pint --test"
         ]
     },
     "extra": {
