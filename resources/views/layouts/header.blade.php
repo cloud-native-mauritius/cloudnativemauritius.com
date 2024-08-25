@@ -18,14 +18,22 @@
         </a>
     </nav>
 
-    <div class="mt-2 max-w-4xl mx-auto bg-[#0086FF] lg:rounded-md lg:shadow-lg lg:outline">
+    <div class="mt-3 max-w-4xl mx-auto bg-[#0086FF] lg:rounded-md lg:shadow-lg lg:outline">
         <div class="py-6 px-6">
             <a href="{{ route('home') }}" class="flex flex-row items-center gap-4">
                 <div>
-                    <img src="/images/kubernetes-color.svg" alt="Cloud Native Mauritius" class="h-16 w-16" />
+                    <img src="/images/cloud-native-community-groups.svg" alt="Cloud Native Mauritius" class="h-20 w-20 rounded-sm" />
                 </div>
-                <div class="text-3xl font-light uppercase text-gray-50">
-                    Cloud Native Mauritius
+                <div class="flex flex-col">
+                    <p class="text-xl font-light uppercase text-gray-50">
+                        Cloud Native
+                    </p>
+                    <p class="text-xl font-light uppercase text-gray-50">
+                        Community Groups
+                    </p>
+                    <p class="text-xl font-bold uppercase text-gray-50">
+                        Mauritius
+                    </p>
                 </div>
             </a>
         </div>
