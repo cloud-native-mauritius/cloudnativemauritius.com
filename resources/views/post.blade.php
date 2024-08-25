@@ -30,5 +30,14 @@
 @endsection
 
 @section('head')
-    <title>{{ $post->meta_title }}</title>
+    <title>{{ $post->meta_title ?? $post->title }}</title>
+    <meta name="description" content="{{ $post->description }}" />
+    <meta property="og:type" content="article"/>
+    <meta property="og:site_name" content="{{ env('APP_NAME') ?? 'Cloud Native Chapter of Mauritius' }}"/>
+    <meta property="og:title" content="{{ $post->meta_title ?? $post->title }}" />
+    <meta property="og:description" content="{{ $post->meta_description ?? $post->description }}" />
+    <meta property="og:url" content="{{ route('post.show', $post) }}" />
+    <meta property="og:image" content="{{ $post->image ?? env('APP_URL') . '/images/cloud_native_mauritius_cover.png' }}" />
+    <meta property="article:published_time" content="{{ $post->created_at }}"/>
+    <meta property="article:modified_time" content="{{ $post->updated_at }}"/>
 @endsection
