@@ -40,8 +40,10 @@
             </div>
             @endforeach
         </div>
-
     </section>
+    <div class="mt-8 max-w-4xl mx-auto">
+        {{ $posts->links() }}
+    </div>
 @endsection
 
 @section('head')
