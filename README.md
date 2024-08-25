@@ -44,24 +44,13 @@ Clone the repository and ensure the followings are installed:
 
 ## Setting Up SQLite for Development
 
-1. Edit `.env` accordingly:
-
-    ```bash
-    DB_CONNECTION=sqlite
-    # DB_HOST=127.0.0.1
-    # DB_PORT=3306
-    # DB_DATABASE=cloudnativemauritius_backoffice
-    # DB_USERNAME=root
-    # DB_PASSWORD=
-    ```
-
-2. Run the migration command
+1. Run the migration command
 
     ```bash
     php artisan migrate
     ```
 
-3. When prompted to create a new SQLite database, type `yes`.
+2. When prompted to create a new SQLite database, type `yes`.
 
 ## Run the Frontend Stack for Development
 
