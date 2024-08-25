@@ -1,18 +1,15 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
+use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    $events = App\Models\Event::orderBy('start_date', 'desc')->get();
-    return view('index', compact('events'));
-});
+Route::get('/', EventController::class)->name('home');
 
-Route::get('/blog', function () {
-    $posts = App\Models\Post::where('is_published', true)->orderBy('published_at', 'desc')->get();
-    return view('posts', compact('posts'));
-});
+Route::get('/blog', BlogController::class)->name('blog');
 
-Route::get('/p/{slug}', [PostController::class, 'show'])->where('slug', '.*');
-Route::get('/{slug}', [PageController::class, 'show'])->where('slug', '.*');
+Route::get('/p/{post:slug}', [PostController::class, 'show'])->name('post.show');
+
+Route::get('/{page:slug}', [PageController::class, 'show'])->name('page.show');

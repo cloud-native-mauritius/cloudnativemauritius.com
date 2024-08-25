@@ -3,13 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function show($slug)
+    public function show(Post $post)
     {
-        $post = Post::where('slug', $slug)->firstOrFail();
+        $post->load(['authors', 'categories']);
 
         return view('post', compact('post'));
     }
