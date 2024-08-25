@@ -1,3 +1,7 @@
+@php
+use Illuminate\Support\Str;
+@endphp
+
 @extends('layouts.main')
 
 @section('content')
@@ -31,7 +35,7 @@
 
 @section('head')
     <title>{{ $post->meta_title ?? $post->title }}</title>
-    <meta name="description" content="{{ $post->description }}" />
+    <meta name="description" content="{{ $post->description ?? Str::limit($post->content, 150) }}" />
     <meta property="og:type" content="article"/>
     <meta property="og:site_name" content="{{ env('APP_NAME') ?? 'Cloud Native Chapter of Mauritius' }}"/>
     <meta property="og:title" content="{{ $post->meta_title ?? $post->title }}" />
