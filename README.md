@@ -70,16 +70,25 @@ Ensure you are in the root directory and run the following commands:
 1. Start the Laravel development server.
 
     ```bash
-    php artisan serve
+    php artisan serve # or use Herd (https://herd.laravel.com/)
     ```
 
-2. Start the frontend development server.
+2. Generate ide helper.
+
+    ```bash
+    composer run ide
+    ```
+
+3. Start the frontend development server.
 
     ```bash
     npm run dev
     ```
 
-3. The application should now be accessible on port `8000`.
+4. The application should now be accessible on port `8000` (or `http://cloudnativemauritius.com.test` on herd)
+
+
+5. Advanced dev tool available on `<host>/__clockwork`
 
 <!-- ## Contributing
 
