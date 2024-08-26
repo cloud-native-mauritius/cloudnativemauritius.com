@@ -28,6 +28,7 @@ class PostFactory extends Factory
             'meta_description' => $this->faker->text(),
             'meta_image' => $this->faker->word(),
             'slug' => $this->faker->slug(),
+            'is_published' => $this->faker->boolean(),
             'category_id' => $this->faker->numberBetween(-10000, 10000),
         ];
     }
