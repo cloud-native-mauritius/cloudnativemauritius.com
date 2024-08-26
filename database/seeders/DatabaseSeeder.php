@@ -28,13 +28,19 @@ class DatabaseSeeder extends Seeder
         Post::factory(5)
             ->has(Author::factory())
             ->has(Category::factory())
+            ->create([
+                'is_published' => true,
+            ]);
+
+        Event::factory(10)
             ->create();
 
-        Event::factory(50)
-            ->create();
+        // Seed two future events
+        Event::factory(2)->create([
+            'start_date' => now()->addDays(30),
+        ]);
 
-        Page::factory(50)
+        Page::factory(10)
             ->create();
-
     }
 }
