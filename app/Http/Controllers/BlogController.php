@@ -16,7 +16,7 @@ class BlogController extends Controller
             ->where('is_published', true)
             ->orderBy('published_at', 'desc')
             ->paginate(10);
-            //->get();
+        //->get();
 
         return view('posts', compact('posts'));
     }
