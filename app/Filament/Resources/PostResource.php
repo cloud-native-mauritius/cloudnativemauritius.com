@@ -32,6 +32,7 @@ class PostResource extends Resource
                     ->required(),
                 FileUpload::make('cover_image')
                     ->label('Cover Image')
+                    ->disk('public')
                     ->image()
                     ->nullable(),
                 MarkdownEditor::make('content')
@@ -48,6 +49,7 @@ class PostResource extends Resource
                     ->nullable(),
                 FileUpload::make('meta_image')
                     ->label('Meta Image')
+                    ->disk('public')
                     ->nullable(),
                 Select::make('Authors')
                     ->multiple()
