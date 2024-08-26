@@ -52,6 +52,12 @@ Clone the repository and ensure the followings are installed:
 
 2. When prompted to create a new SQLite database, type `yes`.
 
+3. Seed the database with dummy data.
+
+    ```bash
+    php artisan migrate:fresh --seed
+    ```
+
 ## Run the Frontend Stack for Development
 
 Ensure you are in the root directory and run the following commands:
@@ -75,7 +81,6 @@ Ensure you are in the root directory and run the following commands:
     ```
 
 4. The application should now be accessible on port `8000` (or `http://cloudnativemauritius.com.test` on herd)
-
 
 5. Advanced dev tool available on `<host>/__clockwork`
 
