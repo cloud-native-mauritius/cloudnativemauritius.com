@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]);
 
-        Post::factory(10)
+        Post::factory(5)
             ->has(Author::factory())
             ->has(Category::factory())
             ->create([
