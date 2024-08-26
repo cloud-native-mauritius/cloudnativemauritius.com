@@ -16,7 +16,7 @@ use Illuminate\Support\Str;
                 @foreach ($post->authors as $author)
                 <div class="flex flex-row gap-2 items-center">
                     <div>
-                        <img class="h-16 rounded-full shadow-md" src="/storage/{{ $author->photo }}" />
+                        <img class="h-16 rounded-full shadow-md" src="{{ asset('storage/'.$author->photo) }}" />
                     </div>
                     <div>
                         <p class="text-sm uppercase font-semibold">By {{ $author->name }}</p>
