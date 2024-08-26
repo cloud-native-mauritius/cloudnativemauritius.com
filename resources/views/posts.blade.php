@@ -25,7 +25,7 @@
                         </div>
                         <div>
                             <p class="text-xs uppercase font-semibold">By {{ $author->name }}</p>
-                            <p class="mt-0.5 text-xs font-light">{{ \Carbon\Carbon::parse($post->created_at)->format('d M Y') }}</p>
+                            <p class="mt-0.5 text-xs font-light">{{ \Carbon\Carbon::parse($post->published_at)->format('d M Y') }}</p>
                         </div>
                     </div>
                     @endforeach
@@ -40,8 +40,10 @@
             </div>
             @endforeach
         </div>
-
     </section>
+    <div class="mt-8 max-w-4xl mx-auto">
+        {{ $posts->links() }}
+    </div>
 @endsection
 
 @section('head')
