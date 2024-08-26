@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Author;
+use Faker\Factory as FakerFactory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class AuthorFactory extends Factory
@@ -26,5 +27,20 @@ class AuthorFactory extends Factory
             'photo' => $this->faker->word(),
             'slug' => $this->faker->slug(),
         ];
+    }
+
+    public function configure()
+    {
+        return $this->afterCreating(function (Author $author) {
+            $faker = FakerFactory::create();
+
+            $dir = storage_path('app/public');
+            $image = $faker->image($dir, 640, 640, null, false);
+
+            $author->photo = $image;
+
+            $author->save();
+
+        });
     }
 }

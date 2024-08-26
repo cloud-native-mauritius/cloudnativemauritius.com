@@ -21,7 +21,7 @@
                     @foreach ($post->authors as $author)
                     <div class="mt-4 flex flex-row gap-2 items-center">
                         <div>
-                            <img class="h-10 rounded-full shadow-md" src="/storage/{{ $author->photo }}" />
+                            <img class="h-10 rounded-full shadow-md" src="{{ asset('storage/'.$author->photo) }}" />
                         </div>
                         <div>
                             <p class="text-xs uppercase font-semibold">By {{ $author->name }}</p>
