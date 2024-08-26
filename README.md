@@ -42,12 +42,20 @@ Clone the repository and ensure the followings are installed:
     php artisan key:generate
     ```
 
+## Setting storage
+
+    ```bash
+    php artisan storage:link
+    ```
+
 ## Setting Up SQLite for Development
 
 1. Run the migration command
 
     ```bash
-    php artisan migrate
+    php artisan migrate --seed 
+    # if already setup, run
+    php artisan migrate:fresh --seed # This will clear the database with new data
     ```
 
 2. When prompted to create a new SQLite database, type `yes`.
