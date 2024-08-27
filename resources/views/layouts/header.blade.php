@@ -26,6 +26,7 @@
                     </svg>
                 </button>
                 <nav class="flex flex-col space-y-4">
+                    <a href="{{ route('home') }}" class="px-3 py-1.5 bg-gray-600 text-slate-100 rounded-md shadow-md text-sm font-semibold uppercase hover:opacity-80 transition ease-in-out duration-300">Home</a>
                     <a href="/our-chapter" class="px-3 py-1.5 bg-gray-600 text-slate-100 rounded-md shadow-md text-sm font-semibold uppercase hover:opacity-80 transition ease-in-out duration-300">Our chapter</a>
                     <a href="/our-sponsors" class="px-3 py-1.5 bg-gray-600 text-slate-100 rounded-md shadow-md text-sm font-semibold uppercase hover:opacity-80 transition ease-in-out duration-300">Our sponsors</a>
                     <a href="/cncf" class="px-3 py-1.5 bg-gray-600 text-slate-100 rounded-md shadow-md text-sm font-semibold uppercase hover:opacity-80 transition ease-in-out duration-300">CNCF</a>

@@ -1,9 +1,9 @@
 @extends('layouts.main')
 
 @section('content')
-<section class="mt-6 md:mt-8 max-w-80 md:max-w-4xl mx-auto">
+<section class="mt-10 md:mt-8 max-w-80 md:max-w-4xl mx-auto">
 
-    <h2 class="ml-6 text-md text-slate-700 font-bold uppercase">Upcoming Event</h2>
+    <h2 class="ml-6 text-lg text-slate-700 font-bold uppercase">Upcoming Event</h2>
 
     @foreach ($events as $event)
 
@@ -45,7 +45,7 @@
 
     @endforeach
 
-    <h2 class="mt-16 ml-6 text-md text-slate-700 font-bold uppercase">Past Events</h2>
+    <h2 class="mt-10 ml-6 text-lg text-slate-700 font-bold uppercase">Past Events</h2>
 
     @foreach ($events as $event)
 
