@@ -2,10 +2,12 @@
 
 namespace Database\Seeders;
 
+use App\Enums\PaperSubmissionStatus;
 use App\Models\Author;
 use App\Models\Category;
 use App\Models\Event;
 use App\Models\Page;
+use App\Models\PaperSubmission;
 use App\Models\Post;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -41,6 +43,15 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Page::factory(10)
+            ->create();
+
+        PaperSubmission::factory(10)
+            ->sequence(
+                ['status' => PaperSubmissionStatus::SUBMITTED],
+                ['status' => PaperSubmissionStatus::ACCEPTED],
+                ['status' => PaperSubmissionStatus::REJECTED],
+                ['status' => PaperSubmissionStatus::PUBLISHED],
+            )
             ->create();
     }
 }

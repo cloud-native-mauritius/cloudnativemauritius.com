@@ -13,7 +13,7 @@
         <a href="{{ route('blog') }}" class="px-3 py-1.5 bg-gray-800 text-slate-100 rounded-md shadow-md text-xs font-semibold uppercase hover:opacity-80 transition ease-in-out duration-300">
             Blog
         </a>
-        <a href="/cfp" class="px-3 py-1.5 bg-gray-800 text-slate-100 rounded-md shadow-md text-xs font-semibold uppercase hover:opacity-80 transition ease-in-out duration-300">
+        <a href="{{ route('call-for-papers') }}" class="px-3 py-1.5 bg-gray-800 text-slate-100 rounded-md shadow-md text-xs font-semibold uppercase hover:opacity-80 transition ease-in-out duration-300">
             Call For Papers
         </a>
         <a href="https://t.me/+E_G1XIVXTWMzYjU0" target="_blank">
