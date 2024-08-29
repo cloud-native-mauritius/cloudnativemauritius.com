@@ -2,11 +2,13 @@
 
 namespace App\Models;
 
+use App\Concerns\ClearsResponseCache;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Page extends Model
 {
+    use ClearsResponseCache;
     use HasFactory;
 
     /**
