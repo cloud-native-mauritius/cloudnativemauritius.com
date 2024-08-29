@@ -8,7 +8,7 @@ class PostController extends Controller
 {
     public function show(Post $post)
     {
-        $post->load(['authors', 'categories']);
+        $post->load(['authors', 'categories', 'authors.socialMedias']);
 
         return view('post', compact('post'));
     }

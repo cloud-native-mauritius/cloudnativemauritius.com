@@ -6,26 +6,33 @@ use Illuminate\Support\Str;
 
 @section('content')
 <section class="mt-6 md:mt-8 max-w-80 md:max-w-4xl mx-auto">
-
     <div class="mt-4 bg-white rounded-md shadow-md p-4 outline">
-        @foreach ($post->categories as $category)
-        <span class="px-3 py-1 rounded-full bg-gray-800 text-white text-[11px] font-bold uppercase">{{ $category->name }}</span>
-        @endforeach
-        <h2 class="mt-1 mb-4 text-2xl font-bold">{{ $post->title }}</h2>
+        <div class="mb-2 ml-2">
+            @foreach ($post->categories as $category)
+                <span class="px-3 py-1 rounded-full bg-gray-800 text-white text-[11px] font-bold uppercase">{{ $category->name }}</span>
+            @endforeach
+        </div>
+        <h2 class="mt-1 mb-1 ml-2 text-2xl font-bold">{{ $post->title }}</h2>
+        <p class="mt-1 mb-6 ml-2 text-xs font-light">{{ \Carbon\Carbon::parse($post->created_at)->format('d M Y') }}</p>
         <div class="mb-2">
             @foreach ($post->authors as $author)
-            <div class="flex flex-row gap-2 items-center">
-                <div>
-                    <img class="h-16 rounded-full shadow-md" src="{{ asset('storage/'.$author->photo) }}" />
-                </div>
-                <div>
+            <div class="flex gap-2 items-center">
+                <img class="size-16 rounded-full shadow-md" src="{{ asset('storage/'.$author->photo) }}" />
+                <div class="flex flex-col gap-2">
                     <p class="text-sm uppercase font-semibold">By {{ $author->name }}</p>
-                    <p class="mt-0.5 text-xs font-light">{{ \Carbon\Carbon::parse($post->created_at)->format('d M Y') }}</p>
+                    
+                    @if($author->bio)
+                        <p class="text-xs font-normal text-wrap">{{ $author->bio }}</p>
+                    @endif
+
+                    @if($author->socialMedias->count())
+                        <x-socials class="mt-2" :socials="$author->socialMedias" />
+                    @endif
                 </div>
             </div>
             @endforeach
         </div>
-        <div class="prose max-w-full">
+        <div class="prose max-w-full mt-8">
             <div>{{ \Illuminate\Mail\Markdown::parse($post->content) }}</div>
         </div>
     </div>
