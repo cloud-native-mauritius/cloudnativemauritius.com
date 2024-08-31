@@ -62,16 +62,15 @@
 
         <div class="w-[50%] md:w-auto bg-[#0086FF] rounded-md p-4 outline h-[130px]">
             <div class="text-[16px] text-center font-bold uppercase text-white">
-                {{ \Carbon\Carbon::parse($event->start_date)->format('F') }}
+                {{ $event->start_date->format('F') }}
             </div>
             <div class="grid place-items-center">
                 <div class="text-7xl text-white">
-                    {{ \Carbon\Carbon::parse($event->start_date)->format('d') }}
+                    {{ $event->start_date->format('d') }}
                 </div>
             </div>
         </div>
     </div>
-    @endif
     @endforeach
 </section>
 @endsection
