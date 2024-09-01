@@ -15,8 +15,7 @@ class BlogController extends Controller
         $posts = Post::with(['authors', 'categories'])
             ->where('is_published', true)
             ->orderBy('published_at', 'desc')
-            ->paginate(10);
-        //->get();
+            ->simplePaginate(10);
 
         return view('posts', compact('posts'));
     }
