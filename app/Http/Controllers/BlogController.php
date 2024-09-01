@@ -13,7 +13,7 @@ class BlogController extends Controller
     public function __invoke(Request $request)
     {
         $posts = Post::with(['authors', 'categories'])
-            ->where('is_published', true)
+            ->published()
             ->orderBy('published_at', 'desc')
             ->paginate(10);
         //->get();
