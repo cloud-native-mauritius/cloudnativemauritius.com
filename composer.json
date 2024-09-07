@@ -12,6 +12,7 @@
         "filament/filament": "^3.2",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9",
+        "spatie/commonmark-shiki-highlighter": "^2.4",
         "spatie/laravel-responsecache": "^7.6"
     },
     "require-dev": {
