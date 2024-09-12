@@ -32,12 +32,16 @@ class AuthorFactory extends Factory
     public function configure()
     {
         return $this->afterCreating(function (Author $author) {
-            $faker = FakerFactory::create();
+            // -------------------
+            // This is slow, let's use nicolas cage as placeholder :)
+            // -------------------
+            // $faker = FakerFactory::create();
 
-            $dir = storage_path('app/public');
-            $image = $faker->image($dir, 640, 640, null, false);
+            // $dir = storage_path('app/public');
+            // $image = $faker->image($dir, 640, 640, null, false);
 
-            $author->photo = $image;
+            // $author->photo = $image;
+            $author->photo = 'cage.png';
 
             $author->save();
 
