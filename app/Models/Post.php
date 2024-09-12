@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Concerns\ClearsResponseCache;
 use App\Observers\PostObserver;
+use Illuminate\Contracts\Database\Query\Builder;
 use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -43,6 +44,11 @@ class Post extends Model
         'created_at' => 'datetime',
         'published_at' => 'datetime',
     ];
+
+    public function scopePublished(Builder $query): Builder
+    {
+        return $query->where('is_published', true);
+    }
 
     public function categories(): BelongsToMany
     {
