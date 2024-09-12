@@ -40,6 +40,8 @@ class Post extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'created_at' => 'datetime',
+        'published_at' => 'datetime',
     ];
 
     public function categories(): BelongsToMany

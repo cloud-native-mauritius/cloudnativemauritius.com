@@ -5,13 +5,8 @@
 
     <h2 class="ml-6 text-lg text-slate-700 font-bold uppercase">Upcoming Event</h2>
 
-    @foreach ($events as $event)
+    @foreach ($events->filter->isHappeningOrInFuture() as $event)
 
-    @php
-    $eventDate = \Carbon\Carbon::parse($event->start_date);
-    @endphp
-
-    @if ($eventDate->isFuture())
     <div class="mt-4 p-6 bg-[#0086FF] flex items-center justify-between rounded-md shadow-md outline md:hover:scale-105 transition ease-in-out duration-300 relative">
         <a href="{{ $event->cncf_url }}" target="_blank" class="absolute inset-0"></a>
         <div class="w-[40%] md:w-auto">
@@ -32,28 +27,21 @@
 
         <div class="w-[50%] md:w-auto bg-[#D62293] rounded-md p-4 outline h-[130px]">
             <div class="text-[16px] text-center font-bold uppercase text-white">
-                {{ \Carbon\Carbon::parse($event->start_date)->format('F') }}
+                {{ $event->start_date->format('F') }}
             </div>
             <div class="grid place-items-center">
                 <div class="text-7xl text-white">
-                    {{ \Carbon\Carbon::parse($event->start_date)->format('d') }}
+                    {{ $event->start_date->format('d') }}
                 </div>
             </div>
         </div>
     </div>
-    @endif
-
     @endforeach
 
     <h2 class="mt-10 ml-6 text-lg text-slate-700 font-bold uppercase">Past Events</h2>
 
-    @foreach ($events as $event)
+    @foreach ($events->filter->isPast() as $event)
 
-    @php
-    $eventDate = \Carbon\Carbon::parse($event->start_date);
-    @endphp
-
-    @if ($eventDate->isPast())
     <div class="mt-4 p-6 bg-white flex items-center justify-between rounded-md shadow-md outline md:hover:scale-105 transition ease-in-out duration-300 relative">
         <a href="{{ $event->cncf_url }}" target="_blank" class="absolute inset-0"></a>
         <div class="w-[40%] md:w-auto">
@@ -74,16 +62,15 @@
 
         <div class="w-[50%] md:w-auto bg-[#0086FF] rounded-md p-4 outline h-[130px]">
             <div class="text-[16px] text-center font-bold uppercase text-white">
-                {{ \Carbon\Carbon::parse($event->start_date)->format('F') }}
+                {{ $event->start_date->format('F') }}
             </div>
             <div class="grid place-items-center">
                 <div class="text-7xl text-white">
-                    {{ \Carbon\Carbon::parse($event->start_date)->format('d') }}
+                    {{ $event->start_date->format('d') }}
                 </div>
             </div>
         </div>
     </div>
-    @endif
     @endforeach
 </section>
 @endsection

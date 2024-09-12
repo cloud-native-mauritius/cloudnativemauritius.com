@@ -35,4 +35,14 @@ class Event extends Model
         'id' => 'integer',
         'start_date' => 'datetime',
     ];
+
+    public function isHappeningOrInFuture()
+    {
+        return $this->start_date->isToday() || $this->start_date->isFuture();
+    }
+
+    public function isPast()
+    {
+        return $this->start_date->isYesterday() || $this->start_date->isBefore(now()->yesterday());
+    }
 }
