@@ -11,7 +11,14 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        $middleware->web(append: [
+            \Spatie\ResponseCache\Middlewares\CacheResponse::class,
+        ]);
+
+        $middleware->alias([
+            // this middleware prevents a route to be cached
+            'cache.prevent' => \Spatie\ResponseCache\Middlewares\DoNotCacheResponse::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
