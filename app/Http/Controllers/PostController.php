@@ -11,7 +11,7 @@ class PostController extends Controller
     {
         abort_if(! $post->is_published, Response::HTTP_FORBIDDEN);
 
-        $post->load(['authors', 'categories']);
+        $post->load(['authors', 'categories', 'authors.socialMedias']);
 
         return view('post', compact('post'));
     }
