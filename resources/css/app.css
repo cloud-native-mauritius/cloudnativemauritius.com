@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.shiki .highlight {
+    background-color: hsl(215, 15%, 20%);
+    padding: 3px 0;
+}
+
+.shiki .add {
+    background-color: hsla(134, 60%, 40%, 0.15);
+    padding: 3px 0;
+}
+
+.shiki .del {
+    background-color: hsla(355, 95%, 52%, 0.15);
+    padding: 3px 0;
+}
+
+.shiki.focus .line:not(.focus) {
+    filter: blur(.095rem);
+    opacity: .4;
+    transition: filter .35s, opacity .35s
+}
+
+.shiki.focus:hover .line {
+    filter: blur(0);
+    opacity: 1
+}

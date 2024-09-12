@@ -14,6 +14,7 @@
         "vite": "^5.0"
     },
     "dependencies": {
-        "@tailwindcss/typography": "^0.5.14"
+        "@tailwindcss/typography": "^0.5.14",
+        "shiki": "^1.16.2"
     }
 }
