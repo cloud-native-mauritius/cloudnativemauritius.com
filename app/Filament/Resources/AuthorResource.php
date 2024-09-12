@@ -3,6 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\AuthorResource\Pages;
+use App\Filament\Resources\AuthorResource\RelationManagers\SocialMediasRelationManager;
 use App\Models\Author;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\MarkdownEditor;
@@ -13,7 +14,6 @@ use Filament\Tables;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Illuminate\Support\Facades\Auth;
 
 class AuthorResource extends Resource
 {
@@ -60,6 +60,7 @@ class AuthorResource extends Resource
                 //
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
@@ -72,7 +73,7 @@ class AuthorResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            SocialMediasRelationManager::class,
         ];
     }
 
@@ -87,6 +88,6 @@ class AuthorResource extends Resource
 
     public static function canViewAny(): bool
     {
-        return Auth::user() && Auth::user()->is_admin;
+        return true;
     }
 }
