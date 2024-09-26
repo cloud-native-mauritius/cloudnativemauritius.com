@@ -1,8 +1,12 @@
 #!/bin/bash
 
-php artisan serve --host=0.0.0.0 --port=8000 &
+if [ -z "$URL" ]; then
+	export URL="0.0.0.0"
+fi 
 
-npm run dev -- --host=0.0.0.0 &
+npm run build
+
+php artisan serve --host=$URL --port=8000 &
 
 wait -n
 
