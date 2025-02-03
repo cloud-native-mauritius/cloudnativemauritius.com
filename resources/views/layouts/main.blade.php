@@ -17,9 +17,29 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&family=Cutive+Mono&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <style>
+    body {
+      transition: background-color 0.3s ease;
+    }
+  </style>
+  <script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.store('theme', {
+            bgColor: localStorage.getItem('bgColor') || '#93eaff',
+            changeColor(newColor) {
+                this.bgColor = newColor;
+                localStorage.setItem('bgColor', newColor);
+                console.log("Background color set to:", this.bgColor);  // Add this line for debugging
+            }
+        });
+    });
+  </script>
 </head>
 
-<body class="font-sans antialiased bg-background">
+<body class="font-sans antialiased" x-data="{ bgColor: $store.theme.bgColor || '#93eaff' }"
+    :style="{ backgroundColor: $store.theme.bgColor || '#93eaff'}">
   @include('layouts.header')
   @yield('content')
   @include('layouts.footer')
