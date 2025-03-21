@@ -4,7 +4,7 @@ metadata:
   name: cnmu-svc
 spec:
   type: LoadBalancer
-  loadBalancerIP: 192.168.0.62
+  loadBalancerIP: 192.168.0.63
   selector:
     app: cloudnativemauritius
   ports:
