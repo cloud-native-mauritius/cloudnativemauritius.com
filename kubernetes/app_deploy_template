@@ -18,7 +18,7 @@ spec:
         app: cloudnativemauritius
     spec:
       containers:
-        - image: registry.alexbissessur.dev/meetups:{{ version }}
+        - image: registry.alexbissessur.dev/cnmu:{{ version }}
           name: cloudnativemauritius
           ports:
             - containerPort: 8080
