@@ -36,6 +36,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: cloudnativemu
+            name: php-errorpage
             port:
               number: 80
