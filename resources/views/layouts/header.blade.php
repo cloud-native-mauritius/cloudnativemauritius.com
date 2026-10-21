@@ -28,16 +28,18 @@
         <nav class="flex flex-col space-y-6">
           <a href="{{ route('home') }}"
             class="px-10 text-center py-3 bg-gray-600 text-slate-100 rounded-md text-sm font-semibold uppercase hover:bg-accent hover:outline hover:outline-gray-800 transition ease-in-out duration-300">Home</a>
-          <a href="/our-chapter"
+          <!-- <a href="/our-chapter"
             class="px-10 text-center py-3 bg-gray-600 text-slate-100 rounded-md text-sm font-semibold uppercase hover:bg-accent hover:outline hover:outline-gray-800 transition ease-in-out duration-300">Our
-            chapter</a>
-          <a href="/our-sponsors"
+            chapter</a> -->
+          <!-- <a href="/our-sponsors"
             class="px-10 py-3 text-center bg-gray-600 text-slate-100 rounded-md text-sm font-semibold uppercase hover:bg-accent hover:outline hover:outline-gray-800 transition ease-in-out duration-300">Our
-            sponsors</a>
-          <a href="/cncf"
+            sponsors</a> -->
+          <a href="{{ route('cncf') }}"
             class="px-10 py-3 text-center bg-gray-600 text-slate-100 rounded-md text-sm font-semibold uppercase hover:bg-accent hover:outline hover:outline-gray-800 transition ease-in-out duration-300">CNCF</a>
           <a href="{{ route('blog') }}"
             class="px-10 py-3 text-center bg-gray-600 text-slate-100 rounded-md text-sm font-semibold uppercase hover:bg-accent hover:outline hover:outline-gray-800 transition ease-in-out duration-300">Blog</a>
+          <a href="{{ route('contributions') }}"
+            class="px-10 py-3 text-center bg-gray-600 text-slate-100 rounded-md text-sm font-semibold uppercase hover:bg-accent hover:outline hover:outline-gray-800 transition ease-in-out duration-300">Contributions</a>
           <a href="{{ route('cfps.create') }}"
             class="px-10 py-3 text-center bg-gray-600 text-slate-100 rounded-md text-sm font-semibold uppercase hover:bg-accent hover:outline hover:outline-gray-800 transition ease-in-out duration-300">CFP</a>
           <a href="https://t.me/+E_G1XIVXTWMzYjU0" target="_blank" class="flex justify-center">
@@ -63,16 +65,18 @@
   <!-- Desktop Navigation -->
   <div class="hidden md:block lg:max-w-4xl lg:mx-auto">
     <nav class="flex space-x-4 justify-end items-center md:max-lg:max-w-4xl md:max-lg:mx-auto md:max-lg:px-8">
-      <a href="/our-chapter"
+      <!-- <a href="/our-chapter"
         class="px-5 py-1.5 bg-gray-800 text-slate-100 rounded-md text-xs font-semibold uppercase hover:bg-accent hover:outline hover:outline-gray-800 transition ease-in-out duration-300">Our
         chapter</a>
       <a href="/our-sponsors"
         class="px-5 py-1.5 bg-gray-800 text-slate-100 rounded-md text-xs font-semibold uppercase hover:bg-accent hover:outline hover:outline-gray-800 transition ease-in-out duration-300">Our
-        sponsors</a>
-      <a href="/cncf"
+        sponsors</a> -->
+      <a href="{{ route('cncf') }}"
         class="px-5 py-1.5 bg-gray-800 text-slate-100 rounded-md text-xs font-semibold uppercase hover:bg-accent hover:outline hover:outline-gray-800 transition ease-in-out duration-300">CNCF</a>
       <a href="{{ route('blog') }}"
         class="px-5 py-1.5 bg-gray-800 text-slate-100 rounded-md text-xs font-semibold uppercase hover:bg-accent hover:outline hover:outline-gray-800 transition ease-in-out duration-300">Blog</a>
+      <a href="{{ route('contributions') }}"
+        class="px-5 py-1.5 bg-gray-800 text-slate-100 rounded-md text-xs font-semibold uppercase hover:bg-accent hover:outline hover:outline-gray-800 transition ease-in-out duration-300">Contributions</a>
       <a href="{{ route('cfps.create') }}"
         class="px-5 py-1.5 bg-gray-800 text-slate-100 rounded-md text-xs font-semibold uppercase hover:bg-accent hover:outline hover:outline-gray-800 transition ease-in-out duration-300">CFP</a>
       <a href="https://t.me/+E_G1XIVXTWMzYjU0" target="_blank">

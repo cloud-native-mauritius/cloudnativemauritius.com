@@ -1,0 +1,41 @@
+# apiVersion: traefik.io/v1alpha1
+# kind: IngressRoute
+# metadata:
+#   name: cnmu-route
+# spec:
+#   entryPoints:
+#   - websecure
+#   - web
+#   routes:
+#   - kind: Rule
+#     match: Host(`cloudnativemauritius.com`)
+#     services:
+#     - name: cloudnativemu
+#       port: 80
+#   tls:
+#     certResolver: le
+
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: cloudnativemu
+  annotations:
+    cert-manager.io/cluster-issuer: "prod-issuer"
+spec:
+  ingressClassName: traefik
+  tls:
+  - hosts:
+    - cloudnativemauritius.com
+    secretName: cnmu-tls
+  rules:
+  - host: cloudnativemauritius.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: php-errorpage
+            port:
+              number: 80

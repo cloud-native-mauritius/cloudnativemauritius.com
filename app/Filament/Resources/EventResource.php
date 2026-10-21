@@ -69,6 +69,7 @@ class EventResource extends Resource
                 TextColumn::make('type')
                     ->label('Event Type'),
             ])
+            ->defaultSort('start_date', direction: 'desc')
             ->filters([
                 //
             ])
